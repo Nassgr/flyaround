@@ -56,4 +56,17 @@ class ReviewController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+    /**
+     * Finds and displays a review entity.
+     *
+     * @Route("/{id}", name="review_show")
+     * @Method("GET")
+     */
+    public function showAction(Review $review)
+    {
+        return $this->render('review/show.html.twig', array(
+            'review' => $review,
+        ));
+    }
 }
