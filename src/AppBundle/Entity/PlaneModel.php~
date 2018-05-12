@@ -12,6 +12,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PlaneModel
 {
+    public function __toString(): string
+    {
+        // Return [id] review, when __toString() method is called.
+        return $this->id;
+    }
+
     /**
      * @var int
      *
