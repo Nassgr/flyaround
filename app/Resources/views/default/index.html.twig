@@ -1,28 +1,34 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="">
+                    <img class="img-nav" alt="Brand" src="{{ asset('build/images/f.png') }}" width="50" height="50">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ path('planemodel_index') }}">Les avions</a></li>
+                    <li><a href="{{ path('reservation_index') }}">Les réservations</a></li>
+                    <li><a href="{{ path('flight_index') }}">Les vols</a></li>
+                    <li><a href="{{ path('site_index') }}">Les terrains</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ path('fos_user_registration_register') }}">Register now</a></li>
+                    <li><a href="{{ path('fos_user_security_login') }}">Login</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
     <div id="wrapper">
         <div id="container">
             <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
+                <h1><span>Welcome to</span> Flyaround Project in Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
             </div>
-
-            <h1>Routes disponibles :</h1>
-            <ul>
-                <li>
-                    <a href="{{ path('planemodel_index') }}">Voir les avions</a>
-                </li>
-                <li>
-                    <a href="{{ path('reservation_index') }}">Voir les reservations</a>
-                </li>
-                <li>
-                    <a href="{{ path('flight_index') }}">Voir les vols</a>
-                </li>
-                <li>
-                    <a href="{{ path('site_index') }}">Voir les terrains</a>
-                </li>
-            </ul>
-
         </div>
     </div>
 {% endblock %}
