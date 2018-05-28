@@ -1,20 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Flights list</h1>
-
-    <table>
+<div class="container">
+    <div class="row">
+    <h1 class="text-center">Flights list</h1>
+    <table class="table table-striped text-center">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nbfreeseats</th>
-                <th>Seatprice</th>
-                <th>Takeofftime</th>
-                <th>Publicationdate</th>
-                <th>Description</th>
-                <th>Wasdone</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Nbfreeseats</th>
+            <th>Seatprice</th>
+            <th>Takeofftime</th>
+            <th>Publicationdate</th>
+            <th>Description</th>
+            <th>Wasdone</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for flight in flights %}
@@ -29,10 +30,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('flight_show', { 'id': flight.id }) }}">show</a>
+                            <a class="btn btn-primary " href="{{ path('flight_show', { 'id': flight.id }) }}">Show</a>
                         </li>
                         <li>
-                            <a href="{{ path('flight_edit', { 'id': flight.id }) }}">edit</a>
+                            <a class="btn btn-warning" href="{{ path('flight_edit', { 'id': flight.id }) }}">Edit</a>
                         </li>
                     </ul>
                 </td>
@@ -40,10 +41,13 @@
         {% endfor %}
         </tbody>
     </table>
-
+    </div>
+<div class="row">
     <ul>
         <li>
-            <a href="{{ path('flight_new') }}">Create a new flight</a>
+            <a class="btn btn-success" href="{{ path('flight_new') }}">+ Create a new flight</a>
         </li>
     </ul>
+</div>
+</div>
 {% endblock %}
